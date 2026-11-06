@@ -21,7 +21,9 @@ if [ "${EMBER_OBFUSCATE:-0}" != "1" ]; then
   grep -n 'obfuscated: false' wasm-toolchain/link-web-target-standalone.js
   # The single-file builder refuses a client with names left in; allow it.
   sed -i 's/if (wasm.length > 130_000_000 \&\& !diagnosticBuild)/if (wasm.length > 400_000_000 \&\& !diagnosticBuild)/' wasm-toolchain/build-single-html.js
+  sed -i 's/const target = 90_000_000;/const target = 95_000_000;/' wasm-toolchain/build-single-html.js
   grep -n '400_000_000' wasm-toolchain/build-single-html.js
+  grep -n 'const target = 95_000_000' wasm-toolchain/build-single-html.js
 fi
 npm ci --ignore-scripts --no-audit --no-fund
 free -m
