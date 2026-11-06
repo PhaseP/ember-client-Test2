@@ -1,0 +1,99 @@
+3763:
+2026-11-06 21:12:01
+Full thread dump OpenJDK 64-Bit Server VM (25.0.5+8-LTS mixed mode, sharing)
+                 JDK version: OpenJDK Runtime Environment Temurin-25.0.5+8 (25.0.5+8) (build 25.0.5+8-LTS)
+
+Threads class SMR info:
+_java_thread_list=0x0000712a6c7e2e50, length=11, elements={
+0x0000712ae002b880, 0x0000712ae0085ec0, 0x0000712ae00876c0, 0x0000712ae00890e0,
+0x0000712ae008a9d0, 0x0000712ae008c220, 0x0000712ae008dff0, 0x0000712ae008f9b0,
+0x0000712ae00dc2c0, 0x0000712ae00dea00, 0x0000712aa0000f40
+}
+
+"main" #3 [3764] prio=5 os_prio=0 cpu=2184083.15ms elapsed=3018.44s tid=0x0000712ae002b880 nid=3764 runnable  [0x0000712ae4dfd000]
+   java.lang.Thread.State: RUNNABLE
+	at org.teavm.common.LoopGraph.<init>(LoopGraph.java:67)
+	at org.teavm.model.optimization.LoopInvariantMotion.optimize(LoopInvariantMotion.java:62)
+	at org.teavm.vm.TeaVM.optimizeMethodCacheMiss(TeaVM.java:781)
+	at org.teavm.vm.TeaVM.optimizeMethod(TeaVM.java:763)
+	at org.teavm.vm.TeaVM.optimize(TeaVM.java:745)
+	at org.teavm.vm.TeaVM.eagerPipeline(TeaVM.java:536)
+	at org.teavm.vm.TeaVM.build(TeaVM.java:454)
+	at org.teavm.tooling.TeaVMTool.generate(TeaVMTool.java:540)
+	at org.teavm.tooling.builder.InProcessBuildStrategy.build(InProcessBuildStrategy.java:328)
+	at StandaloneTeaVMLinker.main(StandaloneTeaVMLinker.java:89)
+
+"Reference Handler" #9 [3774] daemon prio=10 os_prio=0 cpu=0.97ms elapsed=3018.43s tid=0x0000712ae0085ec0 nid=3774 waiting on condition  [0x0000712ac53fe000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@25.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@25.0.5/Reference.java:246)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@25.0.5/Reference.java:208)
+
+"Finalizer" #10 [3775] daemon prio=8 os_prio=0 cpu=0.17ms elapsed=3018.43s tid=0x0000712ae00876c0 nid=3775 in Object.wait()  [0x0000712ac51fe000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait0(java.base@25.0.5/Native Method)
+	- waiting on <0x0000000540bbe7e0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.Object.wait(java.base@25.0.5/Object.java:389)
+	at java.lang.Object.wait(java.base@25.0.5/Object.java:351)
+	at java.lang.ref.ReferenceQueue.remove0(java.base@25.0.5/ReferenceQueue.java:137)
+	at java.lang.ref.ReferenceQueue.remove(java.base@25.0.5/ReferenceQueue.java:215)
+	- locked <0x0000000540bbe7e0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@25.0.5/Finalizer.java:165)
+
+"Signal Dispatcher" #11 [3776] daemon prio=9 os_prio=0 cpu=0.29ms elapsed=3018.43s tid=0x0000712ae00890e0 nid=3776 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #12 [3777] daemon prio=9 os_prio=0 cpu=72.14ms elapsed=3018.43s tid=0x0000712ae008a9d0 nid=3777 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Deflation Thread" #13 [3778] daemon prio=9 os_prio=0 cpu=270.18ms elapsed=3018.43s tid=0x0000712ae008c220 nid=3778 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #14 [3779] daemon prio=9 os_prio=0 cpu=28214.09ms elapsed=3018.43s tid=0x0000712ae008dff0 nid=3779 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #16 [3780] daemon prio=9 os_prio=0 cpu=2664.23ms elapsed=3018.43s tid=0x0000712ae008f9b0 nid=3780 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Notification Thread" #17 [3781] daemon prio=9 os_prio=0 cpu=0.10ms elapsed=3018.42s tid=0x0000712ae00dc2c0 nid=3781 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #18 [3782] daemon prio=8 os_prio=0 cpu=3.19ms elapsed=3018.42s tid=0x0000712ae00dea00 nid=3782 in Object.wait()  [0x0000712ac45fe000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait0(java.base@25.0.5/Native Method)
+	- waiting on <0x0000000542027878> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.Object.wait(java.base@25.0.5/Object.java:389)
+	at java.lang.ref.ReferenceQueue.remove0(java.base@25.0.5/ReferenceQueue.java:123)
+	at java.lang.ref.ReferenceQueue.remove(java.base@25.0.5/ReferenceQueue.java:201)
+	- locked <0x0000000542027878> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@25.0.5/CleanerImpl.java:146)
+	at java.lang.Thread.runWith(java.base@25.0.5/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25.0.5/Thread.java:1474)
+	at jdk.internal.misc.InnocuousThread.run(java.base@25.0.5/InnocuousThread.java:148)
+
+"Attach Listener" #22 [4134] daemon prio=9 os_prio=0 cpu=2.58ms elapsed=1568.07s tid=0x0000712aa0000f40 nid=4134 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"GC Thread#3" os_prio=0 cpu=784363.90ms elapsed=3017.75s tid=0x0000712ab0003160 nid=3786 runnable  
+
+"GC Thread#2" os_prio=0 cpu=786568.97ms elapsed=3017.75s tid=0x0000712ab0002480 nid=3785 runnable  
+
+"GC Thread#1" os_prio=0 cpu=785022.26ms elapsed=3017.75s tid=0x0000712ab0000ce0 nid=3784 runnable  
+
+"VM Thread" os_prio=0 cpu=3353.80ms elapsed=3018.43s tid=0x0000712ae007aa70 nid=3773 runnable  
+
+"VM Periodic Task Thread" os_prio=0 cpu=20.18ms elapsed=3018.43s tid=0x0000712ae0065680 nid=3772 waiting on condition  
+
+"GC Thread#0" os_prio=0 cpu=787183.26ms elapsed=3018.44s tid=0x0000712ae00514c0 nid=3769 runnable  
+
+JNI global refs: 8, weak refs: 0
+
+3763:
+PSYoungGen      total 2650112K, used 523256K [0x0000000715580000, 0x00000007f9b00000, 0x0000000800000000)
+ eden space 1652736K, 31% used [0x0000000715580000,0x000000073547e3e0,0x000000077a380000)
+ from space 997376K, 0% used [0x000000077a380000,0x000000077a380000,0x00000007b7180000)
+ to   space 967680K, 0% used [0x00000007bea00000,0x00000007bea00000,0x00000007f9b00000)
+ParOldGen       total 7689728K, used 7689727K [0x0000000540000000, 0x0000000715580000, 0x0000000715580000)
+ object space 7689728K, 99% used [0x0000000540000000,0x000000071557fff8,0x0000000715580000)
